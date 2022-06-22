@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="description" content="Blog ini berisi informasi informasi menarik yang diupdate harian mulai dari programming,gaming,lifestyle dan masih banyak lagi." />
+    <meta name="author" content="Nico Ariest Putra" />
     <title>Nico Blog | {{ $title }}</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -23,13 +23,16 @@
   </style>
   <body>
     @include('partials.navbar')
-
+    @include('partials.header')
     @yield('container')
+    @include('partials.footer')
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="{{ url('/js/scripts.js') }}"></script>
+
   </body>
 </html>
