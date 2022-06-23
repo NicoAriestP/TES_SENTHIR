@@ -23,7 +23,12 @@
   </style>
   <body>
     @include('partials.navbar')
+    
+    @if (\Request::is('blog/*'))  
+    @include('partials.header_post')
+    @else
     @include('partials.header')
+    @endif
     @yield('container')
     @include('partials.footer')
     <!-- Optional JavaScript; choose one of the two! -->

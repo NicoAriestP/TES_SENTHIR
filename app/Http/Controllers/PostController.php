@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,13 +12,13 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Category $category)
     {
         return view('home', [
             "title" => "Home",
             "Posts" => DB::table('posts')
                         ->orderBy('created_at', 'desc')
-                        ->paginate(5)
+                        ->paginate(5),
         ]);
     }
 
@@ -49,11 +49,11 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(Post $post)
     {
         return view('post', [
             "title" => "Single Post",
-            "post" => post::find($slug)
+            "post" => $post
     
         ]);
     }

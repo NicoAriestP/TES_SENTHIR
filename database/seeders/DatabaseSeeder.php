@@ -16,40 +16,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-       User::create([
-       	'name' => 'Nico Ariest',
-       	'email' => 'Nico@gmail.com',
-       	'password' =>bcrypt('12345')
-       ]);
-
+        User::factory(3)->create();
        Category::create([
        		'name' => 'Web Programming',
        		'slug' => 'web-programming'
        ]);
        Category::create([
-       		'name' => 'Personal',
-       		'slug' => 'personal'
+       		'name' => 'Gaming',
+       		'slug' => 'gaming'
        ]);
-
-       Post::create([
-       		'title' => 'Judul 1',
-       		'slug' => 'Judul 1',
-       		'excerpt' => 'subtitle judul 1',
-       		'body' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae consequatur amet nisi saepe illum, autem maxime. Nam error quam earum, possimus perferendis hic, ipsa id, quia labore aut voluptatum praesentium?',
-       		'category_id' => 1,
-       		'user_id' => 1,
-            'author' => "test"
-       ]);
-
-       Post::create([
-            'title' => 'Judul 2',
-            'slug' => 'Judul 2',
-            'excerpt' => 'subtitle judul 2',
-            'body' => '       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae consequatur amet nisi saepe illum, autem maxime. Nam error quam earum, possimus perferendis hic, ipsa id, quia labore aut voluptatum praesentium?',
-            'category_id' => 2,
-            'user_id' => 1,
-            'author' => "test 2"
+       Category::create([
+        'name' => 'Machine Learning',
+        'slug' => 'machine-learning'
 ]);
+       Post::factory(20)->create();
     }
 }
